@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Deskripsi from './component/dumb/Deskripsi'
+
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>Selamat Datang</h1>
+          <Deskripsi></Deskripsi>
+          <Deskripsi></Deskripsi>
+          <Deskripsi></Deskripsi>
+          <Deskripsi></Deskripsi>
       </div>
     );
   }
 }
 
-const deskripsi = () =>{
-  return <p> Hello </p>
-}
 
-export default deskripsi;
+
+export default App;
