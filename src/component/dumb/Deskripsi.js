@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Deskripsi = () =>{
-    return <h1>Hello JS </h1>
+const Deskripsi = (props) =>{
+    
+    return <h1>Hello {props.name} </h1>
 }
 
 export default Deskripsi;
