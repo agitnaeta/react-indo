@@ -1,27 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Deskripsi from './component/dumb/Deskripsi'
-import Input from './component/screen/Input'
+import Deskripsi from './component/dumb/Deskripsi';
+
 class App extends Component {
 
   constructor(props){
     super(props)
+    this.state = {
+      name : '',
+    }
+
+  }
+
+  setName = (e) => {
+    let name = e.target.value
+    this.setState({
+      name : name
+    })
   }
 
   render() {
     return (
       <div>
-          <Deskripsi name="Naeta"></Deskripsi>
-          <Deskripsi name="Pratama"></Deskripsi>
-          <Input
-            name = "agit"
-            alamat = "Indonesia"
-          />
-           <Input
-            name = "agit"
-            alamat = "Belanda"
-          />
+         <h1>{this.state.name}</h1>
+         <input onChange ={this.setName}/>
+         <Deskripsi name={this.state.name}></Deskripsi>
       </div>
     );
   }
