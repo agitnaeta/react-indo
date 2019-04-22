@@ -3,6 +3,7 @@ import Deskripsi from './component/dumb/Deskripsi';
 import * as Helper from './helper'
 import Loading from './helper/Loading'
 import * as Services from './services'
+import Movies from './component/dumb/Movies'
 
 class App extends Component {
 
@@ -54,6 +55,7 @@ class App extends Component {
           <input onChange ={this.setName}/>
           <button onClick={this.setStillType}> submit</button>
           <Loading/>
+          <Movies data={this.state.movies}></Movies>
         </div>
       )
     }
@@ -64,6 +66,7 @@ class App extends Component {
          <Deskripsi 
           name={Helper.toLower(this.state.name)}>
          </Deskripsi>
+         <Movies data={this.state.movies}></Movies>
       </div>
     );
   }
