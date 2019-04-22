@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Deskripsi from './component/dumb/Deskripsi';
 import * as Helper from './helper'
 import Loading from './helper/Loading'
+import * as Services from './services'
+
 class App extends Component {
 
   constructor(props){
@@ -9,6 +11,7 @@ class App extends Component {
     this.state = {
       name : '',
       stillType: '',
+      movies : []
     }
     
   }
@@ -30,12 +33,20 @@ class App extends Component {
     this.setState({
       stillType : false,
     })
+    this.createRequest()
+  }
+  createRequest = async () =>{
+    let response = await Services.loadMovies()
+    this.setState({
+      movies : response.data.movies
+    })
   }
 
   componentDidUpdate(){
     console.log('component melakukan update')
   }
   render() {
+    console.log(this.state.movies)
     if(this.state.stillType===true){
       return(
         <div>
